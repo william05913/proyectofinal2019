@@ -12,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void rA(View view) {
+        Intent intent = new Intent(MainActivity.this, AlabanzasActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
 
     }
 
