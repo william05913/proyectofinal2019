@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CorosActivity"></activity>
+        <activity android:name=".registro_alabanzas"></activity>
+        <activity android:name=".CorosActivity" />
         <activity android:name=".AlabanzasActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>

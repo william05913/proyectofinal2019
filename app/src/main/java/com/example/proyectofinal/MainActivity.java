@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, CorosActivity.class);
         MainActivity.this.startActivity(intent);
     }
+
     private void DialogConfirmacion(){
         //startActivity(new Intent(getApplicationContext(),MainActivity.class));
         String mensaje = "¿Realmente desea salir?";
