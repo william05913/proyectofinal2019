@@ -99,5 +99,10 @@ public class AlabanzasActivity extends AppCompatActivity {
                     etletra.setText("");
                 }
             }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
+            }
+        });
+    }
         }
