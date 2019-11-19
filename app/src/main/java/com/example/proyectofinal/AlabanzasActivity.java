@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -97,7 +98,7 @@ public class AlabanzasActivity extends AppCompatActivity {
         String parametros = "titulo="+a.getTitulo()+"&autor="+a.getAutor()+"&letra="+a.getLetra();
         cliente.post(url + parametros, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onSuccess(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
                     Toast.makeText(AlabanzasActivity.this, "Alabanza agregada correctamente", Toast.LENGTH_SHORT).show();
                     ettitulo.setText("");
@@ -106,7 +107,7 @@ public class AlabanzasActivity extends AppCompatActivity {
                 }
             }
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onFailure(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody, Throwable error) {
 
             }
         });
@@ -115,13 +116,13 @@ public class AlabanzasActivity extends AppCompatActivity {
         String url = "https://proyectofinalsis21.000webhostapp.com/obtenerDatos.php";
         cliente.post(url, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onSuccess(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody) {
                 if (statusCode == 200){
                     listarAlabanzas(new String(responseBody));
                 }
             }
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onFailure(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody, Throwable error) {
 
             }
         });
@@ -152,7 +153,7 @@ public class AlabanzasActivity extends AppCompatActivity {
 
                     cliente.post(url, new AsyncHttpResponseHandler() {
                         @Override
-                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        public void onSuccess(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody) {
                             if (statusCode == 200){
                                 Toast.makeText(AlabanzasActivity.this, "Alabanza liminada Correctamente", Toast.LENGTH_SHORT).show();
                                 try {
@@ -164,7 +165,7 @@ public class AlabanzasActivity extends AppCompatActivity {
                             }
                         }
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                        public void onFailure(int statusCode, PreferenceActivity.Header[] headers, byte[] responseBody, Throwable error) {
 
                         }
                     });
