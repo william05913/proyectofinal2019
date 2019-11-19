@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AlabanzasActivity">
+    tools:context=".AlabanzasActivity"
+    android:background="#7F90E2"
+    >
 
     <TextView
         android:layout_width="match_parent"
