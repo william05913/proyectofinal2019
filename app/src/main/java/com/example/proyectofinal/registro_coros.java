@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -90,8 +92,16 @@ public class registro_coros extends AppCompatActivity {
 
                 lista.add(a);
 
-
             }
+            final ArrayAdapter<Coros> a = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, lista);
+            lvdatosc.setAdapter(a);
+
+
+            buscar.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
 
     }
 
