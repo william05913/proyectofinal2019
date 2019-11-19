@@ -143,4 +143,8 @@ public class registro_alabanzas extends AppCompatActivity {
 
                         }
                     });
+                    return true;
+                }
+            });
+
             }
