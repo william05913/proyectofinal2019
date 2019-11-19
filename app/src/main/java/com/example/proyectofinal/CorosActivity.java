@@ -48,5 +48,17 @@ public class CorosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coros);
+
+        ettituloc = findViewById(R.id.ettituloc);
+        etautorc = findViewById(R.id.etautorc);
+        etletrac = findViewById(R.id.etletrac);
+
+        btnRegistrarc = findViewById(R.id.btnRegistrarC);
+
+        lvdatosc = findViewById(R.id.lvDatosRc);
+
+        clientec = new AsyncHttpClient();
+
+        almacenarCoros();
     }
 }
