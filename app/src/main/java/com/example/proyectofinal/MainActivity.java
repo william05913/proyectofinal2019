@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     public void rA(View view) {
         Intent intent = new Intent(MainActivity.this, AlabanzasActivity.class);
         MainActivity.this.startActivity(intent);
+
     }
 
     }
