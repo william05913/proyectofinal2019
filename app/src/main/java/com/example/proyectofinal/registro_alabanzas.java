@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -115,5 +118,24 @@ public class registro_alabanzas extends AppCompatActivity {
 
                 }
             });
+            lvdatos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
+                    Alabanzas a = lista.get(position);
+                    String url = "https://proyectofinalsis21.000webhostapp.com/eliminar.php?id_a="+a.getId();
+
+                    cliente.post(url, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            if (statusCode == 200){
+                                Toast.makeText(registro_alabanzas.this, "Alabanza liminada Correctamente", Toast.LENGTH_SHORT).show();
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                obtenerAlabanzas();
+                            }
+                        }
             }
