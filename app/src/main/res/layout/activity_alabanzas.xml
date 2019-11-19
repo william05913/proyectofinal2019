@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AlabanzasActivity"
-    android:background="#7F90E2"
+    android:background="#847B96"
     >
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="REGISTRO DE ALABANZAS"
         android:textAlignment="center"
-        android:textColor="#000"
+        android:textColor="#110F0F"
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_marginTop="10dp"
