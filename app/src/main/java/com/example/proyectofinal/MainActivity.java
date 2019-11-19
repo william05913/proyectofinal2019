@@ -81,5 +81,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void rC(View view) {
+        Intent intent = new Intent(MainActivity.this, CorosActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
     }
 
