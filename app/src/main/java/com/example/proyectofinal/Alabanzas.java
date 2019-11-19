@@ -55,6 +55,7 @@ public class Alabanzas {
         return "TÍTULO: " + titulo + "\n"+
                 "AUTOR: " + autor + "\n\n"+
                 "LETRA: " +  "\n" + letra ;
+
     }
 }
 
