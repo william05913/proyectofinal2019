@@ -168,4 +168,29 @@ public class AlabanzasActivity extends AppCompatActivity {
 
                         }
                     });
-                    }
+                    return true;
+                }
+            });
+
+            lvdatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Alabanzas a = lista.get(position);
+                    StringBuffer b = new StringBuffer();
+                    b.append("ID: " + a.getId() + "\n");
+                    b.append("TITULO: " + a.getTitulo() + "\n");
+                    b.append("AUTOR: " + a.getTitulo() + "\n");
+                    b.append("LETRA: " + a.getLetra() + "\n");
+
+                    AlertDialog.Builder al = new AlertDialog.Builder(AlabanzasActivity.this);
+                    al.setCancelable(true);
+                    al.setTitle("Detalle");
+                    al.setMessage(a.tostring());
+                    al.show();
+                }
+            });
+        }catch(Exception el){
+            el.printStackTrace();
+        }
+
+    }
