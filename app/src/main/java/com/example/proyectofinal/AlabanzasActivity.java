@@ -163,5 +163,9 @@ public class AlabanzasActivity extends AppCompatActivity {
                                 obtenerAlabanzas();
                             }
                         }
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
+                        }
+                    });
                     }
