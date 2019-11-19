@@ -47,4 +47,9 @@ public class Coros {
     public void setLetra(String letra) {
         this.letra = letra; }
 
+    @Override
+    public String toString() {
+        return  id +  " ~ " + titulo;
+    }
+
 }
