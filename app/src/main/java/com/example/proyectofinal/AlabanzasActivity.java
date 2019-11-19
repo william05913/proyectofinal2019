@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -59,5 +60,29 @@ public class AlabanzasActivity extends AppCompatActivity {
         almacenarAlabanzas();
         obtenerAlabanzas();
 
+    }
+    private void almacenarAlabanzas() {
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ettitulo.getText().toString().length()== 0 )  {
+                    ettitulo.setError("Campo Obligatorio");
+                }else if (etautor.getText().toString().length()== 0){
+
+                    etautor.setError("Campo Obligatorio");
+                }else  if (etletra.getText().toString().length()== 0){
+                    etletra.setError("Campo Obligatorio");
+                }else{
+                    Alabanzas a = new Alabanzas();
+                    a.setTitulo(ettitulo.getText().toString().replaceAll(" ", "%20"));
+                    a.setAutor(etautor.getText().toString().replaceAll(" ", "%20"));
+                    a.setLetra(etletra.getText().toString().replaceAll(" ", "%20"));
+
+                    agregarAlabanza(a);
+
+                    obtenerAlabanzas();
+                }
+            }
+        });
     }
 }
