@@ -90,6 +90,8 @@ public class registro_coros extends AppCompatActivity {
 
                 lista.add(a);
 
+
             }
+
     }
 
