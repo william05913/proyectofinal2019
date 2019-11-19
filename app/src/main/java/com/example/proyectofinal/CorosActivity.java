@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -60,5 +61,29 @@ public class CorosActivity extends AppCompatActivity {
         clientec = new AsyncHttpClient();
 
         almacenarCoros();
+    }
+
+    private void almacenarCoros() {
+        btnRegistrarc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ettituloc.getText().toString().length()== 0 )  {
+                    ettituloc.setError("Campo Obligatorio");
+                }else if (etautorc.getText().toString().length()== 0){
+                    etautorc.setError("Campo Obligatorio");
+                }else  if (etletrac.getText().toString().length()== 0){
+                    etletrac.setError("Campo Obligatorio");
+                }else{
+                    Coros a = new Coros();
+                    a.setTitulo(ettituloc.getText().toString().replaceAll(" ", "%20"));
+                    a.setAutor(etautorc.getText().toString().replaceAll(" ", "%20"));
+                    a.setLetra(etletrac.getText().toString().replaceAll(" ", "%20"));
+
+                    agregarCoros(a);
+
+                    //obtenerAlabanzas();
+                }
+            }
+        });
     }
 }
