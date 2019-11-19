@@ -144,5 +144,32 @@ public class registro_coros extends AppCompatActivity {
                     return true;
                 }
             });
+            lvdatosc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Coros a = lista.get(position);
+                    StringBuffer b = new StringBuffer();
+                    b.append("ID: " + a.getId() + "\n");
+                    b.append("TITULO: " + a.getTitulo() + "\n");
+                    b.append("AUTOR: " + a.getTitulo() + "\n");
+                    b.append("LETRA: " + a.getLetra() + "\n");
+
+                    AlertDialog.Builder al = new AlertDialog.Builder(registro_coros.this);
+                    al.setCancelable(true);
+                    al.setTitle("Descripción Coro");
+                    al.setMessage(a.tostring());
+                    al.show();
+                }
+            });
+
+
+        }catch(Exception el){
+            el.printStackTrace();
+        }
+
+
     }
+
+}
+
 
