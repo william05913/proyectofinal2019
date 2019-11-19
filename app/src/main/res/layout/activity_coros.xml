@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CorosActivity"
-    android:background="#2196F3"
+    android:background="#7CA2C0"
     >
 
     <TextView
