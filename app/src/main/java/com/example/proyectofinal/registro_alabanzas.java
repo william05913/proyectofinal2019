@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
@@ -107,4 +108,12 @@ public class registro_alabanzas extends AppCompatActivity {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     a.getFilter().filter(s);
                 }
+
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+
             }
