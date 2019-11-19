@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".AlabanzasActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTRO DE ALABANZAS"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/ettitulo"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:hint="Título"
+                android:inputType="text"
+                android:background="@drawable/inputboton"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+
+            <EditText
+                android:id="@+id/etautor"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:hint="Autor"
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:background="@drawable/inputboton"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+
+            <EditText
+                android:id="@+id/etletra"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:textAlignment="center"
+                android:hint="Letra"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/inputboton"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+
+            <Button
+                android:id="@+id/btnRegistrarA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_estilo"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
