@@ -146,5 +146,27 @@ public class registro_alabanzas extends AppCompatActivity {
                     return true;
                 }
             });
+            lvdatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Alabanzas a = lista.get(position);
+                    StringBuffer b = new StringBuffer();
+                    b.append("ID: " + a.getId() + "\n");
+                    b.append("TITULO: " + a.getTitulo() + "\n");
+                    b.append("AUTOR: " + a.getTitulo() + "\n");
+                    b.append("LETRA: " + a.getLetra() + "\n");
 
+                    AlertDialog.Builder al = new AlertDialog.Builder(registro_alabanzas.this);
+                    al.setCancelable(true);
+                    al.setTitle("Descripción Alabanza");
+                    al.setMessage(a.tostring());
+                    al.show();
+                }
+            });
+        }catch(Exception el){
+            el.printStackTrace();
+        }
+
+
+    }
             }
