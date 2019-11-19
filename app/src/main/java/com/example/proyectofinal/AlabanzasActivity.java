@@ -114,4 +114,10 @@ public class AlabanzasActivity extends AppCompatActivity {
                     listarAlabanzas(new String(responseBody));
                 }
             }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
         }
