@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -112,6 +115,25 @@ public class registro_coros extends AppCompatActivity {
 
                 }
             });
+            lvdatosc.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
+                    Coros a = lista.get(position);
+                    String url = "https://proyectofinalsis21.000webhostapp.com/eliminarCoro.php?id_c="+a.getId();
+
+                    clientec.post(url, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            if (statusCode == 200){
+                                Toast.makeText(registro_coros.this, "Coro liminado Correctamente", Toast.LENGTH_SHORT).show();
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                obtenerCoros();
+                            }
+                        }
     }
 
