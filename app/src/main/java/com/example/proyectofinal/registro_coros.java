@@ -135,5 +135,14 @@ public class registro_coros extends AppCompatActivity {
                                 obtenerCoros();
                             }
                         }
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                        }
+                    });
+
+                    return true;
+                }
+            });
     }
 
