@@ -47,7 +47,12 @@ public class registro_alabanzas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_alabanzas);
 
+        lvdatos = findViewById(R.id.lvDatosRa);
 
+        buscar = findViewById(R.id.buscar);
+
+        cliente = new AsyncHttpClient();
+        obtenerAlabanzas();
 
     }
 
